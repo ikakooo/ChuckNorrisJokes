@@ -18,10 +18,13 @@ object DataLoader {
         .build()
     private val service = retrofit.create(APIService::class.java)
 
-    fun getRequestRandomJokes(
+
+    fun getRequestJokeByCategory(
+        category: String?,
         callback: FutureCallbackRandomJokesBridge
+
     ) {
-        val call = service.getExchangeRates()
+        val call = service.getJokeByCategory(category)
         call.enqueue(object : Callback<JokesDataModel> {
             override fun onFailure(call: Call<JokesDataModel>, t: Throwable) {
                 callback.onFailure(t.message.toString())
