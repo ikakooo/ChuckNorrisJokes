@@ -1,10 +1,11 @@
-package com.example.chucknorrisjokes
+package com.example.chucknorrisjokes.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import com.example.chucknorrisjokes.Constants.categories
+import com.example.chucknorrisjokes.R
 import com.example.chucknorrisjokes.models.JokesDataModel
 import com.example.chucknorrisjokes.network_request.DataLoader
 import com.example.xmlparsing.network_request.FutureCallbackRandomJokesBridge
@@ -18,7 +19,10 @@ class ShowJokesActivity : AppCompatActivity() {
         init()
     }
     private fun init() {
-        getByCategory(categories[7])
+        getByCategory(null)
+        random_Button_ID.setOnClickListener {
+            getByCategory(null)
+        }
     }
     private  fun getByCategory(categoriesString:String?){
         DataLoader.getRequestJokeByCategory(categoriesString,object :FutureCallbackRandomJokesBridge{
