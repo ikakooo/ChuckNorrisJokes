@@ -5,14 +5,16 @@
     android:background="@color/colorPrimaryDark">
 
     <TextView
+        android:background="@drawable/rounded_bacground"
         android:id="@+id/Text_viewID"
         android:layout_width="300dp"
+        android:padding="10sp"
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="@string/hi"
-        android:textColor="@color/colorAccent"
+        android:textColor="#FAEE01"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -27,9 +29,11 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@mipmap/random_icon"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            android:tag="true" />
 
         <Button
+            android:id="@+id/choseCategory_Button_ID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -39,11 +43,12 @@
             android:textAllCaps="false" />
 
         <ImageButton
+            android:id="@+id/favorite_Button_ID"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:layout_marginStart="40dp"
-            android:background="@drawable/ic_heart_checked" />
+            android:background="@drawable/ic_heart_checked"
+            android:tag="true" />
     </LinearLayout>
-
 </FrameLayout>
