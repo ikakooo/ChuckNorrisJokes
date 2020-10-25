@@ -1,15 +1,14 @@
-package com.example.chucknorrisjokes.ui
+package com.example.chucknorrisjokes.ui.reciclerview_halper
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.chucknorrisjokes.R
 import kotlinx.android.synthetic.main.category_layout.view.*
 
 
-class CategoryAdapter(private val favourites: MutableList<String>, val detailedMovieListener: ItemClickListener) :
+class CategoryAdapter(private val favourites: MutableList<String>, val clickingListener: ItemClickListener) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int = favourites.size
@@ -26,10 +25,10 @@ class CategoryAdapter(private val favourites: MutableList<String>, val detailedM
 
         fun onBind() {
             model = favourites[adapterPosition]
-            itemView.Category_TextView_ID.text = model
+            itemView.Category_TextView_ID.text = model.capitalize()
             //Glide.with(itemView.context).load(BASE_IMG_URL + model.path).into(itemView.moviesImageViewID)
             itemView.setOnClickListener {
-                detailedMovieListener.viewClicked(adapterPosition)
+                clickingListener.viewClicked(adapterPosition)
             }
         }
     }

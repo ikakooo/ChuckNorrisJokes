@@ -24,7 +24,9 @@ class ShowJokesActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
-
+        favorite_ImageView_ID.setOnClickListener {
+            startActivity(Intent(baseContext, MarkJokeCategoryActivity::class.java))
+        }
     }
     private fun init() {
         val category = if (intent.getStringExtra("categoryID")=="random") null else intent.getStringExtra("categoryID")
@@ -55,9 +57,7 @@ class ShowJokesActivity : AppCompatActivity() {
         }
         choseCategory_Button_ID.apply {
 
-
         }
-
     }
     private  fun getByCategory(categoriesString:String?){
         DataLoader.getRequestJokeByCategory(categoriesString,object :FutureCallbackRandomJokesBridge{
