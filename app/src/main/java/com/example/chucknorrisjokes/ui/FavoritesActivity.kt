@@ -23,7 +23,25 @@ class FavoritesActivity : AppCompatActivity() {
 
     private fun init() {
 
+        favorites_RecyclerView_ID.apply {
+            favouritesAdapter = FavoriteAdapter(favouritesJokesList,
+                object : ItemClickListener {
+                    override fun viewClicked(position: Int) {
+                        val favouritesJoke = favouritesJokesList[position]
+                        //აქ იშლება აითემ კლიკზე აითემის წაშლა
+                        roomDB.favoriteDaoConnection().deleteFavoriteJoke(favouritesJoke.JokeID)
+                        favouritesJokesList.removeAt(position)
+                        favouritesAdapter.notifyItemRemoved(position)
+                    }
 
+                })
+            layoutManager = LinearLayoutManager(context)
+            adapter = favouritesAdapter
+        }
+
+        itemChange()
+    }
+    fun itemChange(){
         favouritesJokesList.clear()
         val dB = roomDB.favoriteDaoConnection().getFavoriteJokes().toMutableList()
         dB.forEach {
@@ -35,19 +53,5 @@ class FavoritesActivity : AppCompatActivity() {
             )
         }
         favouritesAdapter.notifyDataSetChanged()
-
-
-        favorites_RecyclerView_ID.apply {
-            favouritesAdapter = FavoriteAdapter(favouritesJokesList,
-                object : ItemClickListener {
-                    override fun viewClicked(position: Int) {
-                        val favouritesMovie = favouritesJokesList[position]
-                        //aq und moxdes waShla
-                    }
-
-                })
-            layoutManager = LinearLayoutManager(context)
-            adapter = favouritesAdapter
-        }
     }
 }

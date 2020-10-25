@@ -6,7 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chucknorrisjokes.R
 import com.example.chucknorrisjokes.data_base_local.RoomFavoriteJokesModel
-import kotlinx.android.synthetic.main.category_layout.view.*
+import kotlinx.android.synthetic.main.joke_layout.view.*
+
 
 class FavoriteAdapter(private val favourites: MutableList<RoomFavoriteJokesModel>, val clickingListener: ItemClickListener) :
     RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
@@ -25,8 +26,7 @@ class FavoriteAdapter(private val favourites: MutableList<RoomFavoriteJokesModel
 
         fun onBind() {
             model = favourites[adapterPosition]
-            itemView.Category_TextView_ID.text = model.JokeString
-            //Glide.with(itemView.context).load(BASE_IMG_URL + model.path).into(itemView.moviesImageViewID)
+            itemView.JokeTextView_ID.text = model.JokeString
             itemView.setOnClickListener {
                 clickingListener.viewClicked(adapterPosition)
             }
