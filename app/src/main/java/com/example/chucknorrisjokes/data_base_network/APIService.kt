@@ -1,4 +1,4 @@
-package com.example.chucknorrisjokes.network_request
+package com.example.chucknorrisjokes.data_base_network
 
 
 import com.example.chucknorrisjokes.models.JokesDataModel

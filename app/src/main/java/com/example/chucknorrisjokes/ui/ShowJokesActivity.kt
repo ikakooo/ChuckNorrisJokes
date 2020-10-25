@@ -4,13 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
-import androidx.core.view.isVisible
-import com.example.chucknorrisjokes.Constants.categories
 import com.example.chucknorrisjokes.R
-import com.example.chucknorrisjokes.addFragment
 import com.example.chucknorrisjokes.models.JokesDataModel
-import com.example.chucknorrisjokes.network_request.DataLoader
+import com.example.chucknorrisjokes.data_base_network.DataLoader
 import com.example.xmlparsing.network_request.FutureCallbackRandomJokesBridge
 import kotlinx.android.synthetic.main.activity_jokes_show.*
 

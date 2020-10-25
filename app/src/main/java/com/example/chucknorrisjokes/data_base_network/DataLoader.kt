@@ -1,4 +1,4 @@
-package com.example.chucknorrisjokes.network_request
+package com.example.chucknorrisjokes.data_base_network
 
 import android.util.Log
 import com.example.chucknorrisjokes.Constants.BASE_URL_JOKES
