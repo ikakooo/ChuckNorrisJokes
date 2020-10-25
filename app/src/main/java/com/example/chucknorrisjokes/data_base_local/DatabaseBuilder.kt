@@ -8,7 +8,7 @@ object DatabaseBuilder {
         Room.databaseBuilder(
             AppRoot.instance.getContext(),
             FavoriteJokesDB::class.java,
-            "Top.roomDB"
+            "TopJokes.roomDB"
         ).allowMainThreadQueries()
             .fallbackToDestructiveMigration()
             .build()

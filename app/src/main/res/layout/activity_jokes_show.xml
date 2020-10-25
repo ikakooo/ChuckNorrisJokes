@@ -59,14 +59,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/favorite_Button_ID"
             app:layout_constraintStart_toEndOf="@+id/random_Button_ID"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/favorite_ImageView_ID" />
 
         <ImageButton
             android:id="@+id/favorite_Button_ID"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@drawable/ic_heart_checked"
-            android:tag="true"
+            android:background="@drawable/ic_heart_unchecked"
+            android:tag="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
