@@ -3,9 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    >
+    android:id="@+id/splash_screen_layout">
 
     <FrameLayout
+        android:id="@+id/splash_screen_child_layout"
         android:background="@mipmap/m_chuck_norris"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
