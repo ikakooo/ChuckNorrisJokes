@@ -1,4 +1,4 @@
-package ikakooo.chkhitu.chucknorrisjokes
+package ikakooo.chkhitu.chucknorrisjokes.ui
 
 import androidx.lifecycle.Lifecycle
 import androidx.test.espresso.Espresso.onView
@@ -7,7 +7,7 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import ikakooo.chkhitu.chucknorrisjokes.ui.ShowJokesActivity
+import ikakooo.chkhitu.chucknorrisjokes.R
 import org.hamcrest.Matchers.not
 import org.hamcrest.core.AllOf.allOf
 import org.junit.Rule
